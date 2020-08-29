@@ -10,8 +10,9 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var numArr = [1, 2, 3]
+    @State private var numArr = [1, 2, 3, 1, 2, 3, 3, 2, 1]
     @State private var score = 1000
+    @State private var backgroundColor = [Color.white, Color.white, Color.white, Color.white, Color.white, Color.white, Color.white, Color.white, Color.white]
     
     var body: some View {
         ZStack{
@@ -38,40 +39,46 @@ struct ContentView: View {
                 
                 
                 Spacer()
+                VStack{
                 HStack{
-                    Image("icon\(numArr[0])")
-                        .resizable()
-                        .aspectRatio(1, contentMode: .fit)
-                        .background(Color.white.opacity(0.4))
-                        .cornerRadius(20)
+                    CardView(num: numArr[0], backgoundColor: backgroundColor[0])
                     
-                    Image("icon\(numArr[1])")
-                        .resizable()
-                        .aspectRatio(1, contentMode: .fit)
-                        .background(Color.white.opacity(0.4))
-                        .cornerRadius(20)
+                    CardView(num: numArr[1], backgoundColor: backgroundColor[1])
                     
-                    Image("icon\(numArr[2])")
-                        .resizable()
-                        .aspectRatio(1, contentMode: .fit)
-                        .background(Color.white.opacity(0.4))
-                        .cornerRadius(20)
+                    CardView(num: numArr[2], backgoundColor: backgroundColor[2])
                     
-                }.padding(20)
+                }.padding(.horizontal)
+                HStack{
+                    CardView(num: numArr[3], backgoundColor: backgroundColor[3])
+                    
+                    CardView(num: numArr[4], backgoundColor: backgroundColor[4])
+                    
+                    CardView(num: numArr[5], backgoundColor: backgroundColor[5])
+                    
+                }.padding(.horizontal)
+                HStack{
+                    CardView(num: numArr[6], backgoundColor: backgroundColor[6])
+                    
+                    CardView(num: numArr[7], backgoundColor: backgroundColor[7])
+                    
+                    CardView(num: numArr[8], backgoundColor: backgroundColor[8])
+                    
+                }.padding(.horizontal)
+                }
                 Button(action: {
-                    let randomNumber1 = Int.random(in: 1...3)
                     
-                    let randomNumber2 = Int.random(in: 1...3)
+                    for color in 0 ... 8{
+                    self.backgroundColor[color] = Color.white
+                    }
+                    for turn in 0 ... 8{
+                        let ranNum = Int.random(in: 1...3)
+                        self.numArr[turn] = ranNum
+                    }
                     
-                    let randomNumber3 = Int.random(in: 1...3)
                     
-                    self.numArr[0] = randomNumber1
-                    self.numArr[1] = randomNumber2
-                    self.numArr[2] = randomNumber3
-                    
-                    self.countResult(num1: randomNumber1, num2: randomNumber2, num3: randomNumber3)
+                    self.countResult(numArr: self.numArr)
                 }) {
-                    Text(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/)
+                    Text("Let roll!")
                         .fontWeight(.bold)
                         .foregroundColor(Color.black)
                         .background(Color.red)
@@ -81,10 +88,27 @@ struct ContentView: View {
         }
     }
     
-    func countResult(num1: Int, num2: Int, num3: Int) -> Void {
+    func countResult(numArr: [Int]) -> Void {
         
-        if num1 == num2 && num1 == num3 {
+        if numArr[0] == numArr[1] && numArr[1] == numArr[2] {
             self.score += 100
+            self.backgroundColor[0] = Color.green
+            self.backgroundColor[1] = Color.green
+            self.backgroundColor[2] = Color.green
+        }
+        
+        if numArr[3] == numArr[4] && numArr[4] == numArr[5] {
+            self.score += 100
+            self.backgroundColor[3] = Color.green
+            self.backgroundColor[4] = Color.green
+            self.backgroundColor[5] = Color.green
+        }
+        
+        if numArr[6] == numArr[7] && numArr[7] == numArr[8] {
+            self.score += 100
+            self.backgroundColor[6] = Color.green
+            self.backgroundColor[7] = Color.green
+            self.backgroundColor[8] = Color.green
         }
         
         return

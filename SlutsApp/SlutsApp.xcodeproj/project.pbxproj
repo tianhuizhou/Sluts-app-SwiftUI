@@ -13,6 +13,7 @@
 		C5A4BEBE24F8F8E400D8CDED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5A4BEBD24F8F8E400D8CDED /* Assets.xcassets */; };
 		C5A4BEC124F8F8E400D8CDED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5A4BEC024F8F8E400D8CDED /* Preview Assets.xcassets */; };
 		C5A4BEC424F8F8E400D8CDED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5A4BEC224F8F8E400D8CDED /* LaunchScreen.storyboard */; };
+		C5AB087524F9D098003D755A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AB087424F9D098003D755A /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C5A4BEC024F8F8E400D8CDED /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C5A4BEC324F8F8E400D8CDED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C5A4BEC524F8F8E400D8CDED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5AB087424F9D098003D755A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				C5A4BEB724F8F8E100D8CDED /* AppDelegate.swift */,
 				C5A4BEB924F8F8E100D8CDED /* SceneDelegate.swift */,
 				C5A4BEBB24F8F8E100D8CDED /* ContentView.swift */,
+				C5AB087424F9D098003D755A /* CardView.swift */,
 				C5A4BEBD24F8F8E400D8CDED /* Assets.xcassets */,
 				C5A4BEC224F8F8E400D8CDED /* LaunchScreen.storyboard */,
 				C5A4BEC524F8F8E400D8CDED /* Info.plist */,
@@ -148,6 +151,7 @@
 			files = (
 				C5A4BEB824F8F8E100D8CDED /* AppDelegate.swift in Sources */,
 				C5A4BEBA24F8F8E100D8CDED /* SceneDelegate.swift in Sources */,
+				C5AB087524F9D098003D755A /* CardView.swift in Sources */,
 				C5A4BEBC24F8F8E100D8CDED /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
